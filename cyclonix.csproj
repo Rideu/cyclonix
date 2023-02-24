@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<LangVersion>latest</LangVersion>
+		<!--<TargetFramework>net5.0-windows</TargetFramework>-->
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<UseWindowsForms>false</UseWindowsForms>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<StartupObject></StartupObject>
+		<AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<EnableNETAnalyzers>false</EnableNETAnalyzers>
+		<Configurations>Debug;Release</Configurations>
+		<ApplicationIcon>icon.ico</ApplicationIcon>
+		<RunPostBuildEvent>Always</RunPostBuildEvent>
+		<SignAssembly>False</SignAssembly>
+		<AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+		<RootNamespace>Cyclonix</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <LangVersion>preview</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <LangVersion>preview</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="icon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="icon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\dnsclient\dnsclient\dnsclient.csproj" />
+	  <ProjectReference Include="..\TLSHandler\Projects\TLSHandler\TLSHandler.csproj" />
+	</ItemGroup>
+	</Project>
